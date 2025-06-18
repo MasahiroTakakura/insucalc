@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { InsulinCalculator } from '@/components/InsulinCalculator';
 
 export default function Home() {
