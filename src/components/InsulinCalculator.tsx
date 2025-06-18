@@ -84,21 +84,6 @@ export function InsulinCalculator() {
     showMessage('出力データが生成されました！', 'success');
   };
 
-  const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(output);
-      showMessage('クリップボードにコピーしました！', 'success');
-    } catch (err) {
-      const textArea = document.createElement('textarea');
-      textArea.value = output;
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
-      showMessage('クリップボードにコピーしました！', 'success');
-    }
-  };
-
   const clearDoses = () => {
     setInputRows(inputRows.map(row => ({ ...row, dose: '' })));
     setOutput('');
